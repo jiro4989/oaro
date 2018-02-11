@@ -1,0 +1,18 @@
+builds:
+  - binary: game-manager
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - 386
+archive:
+  format: tar.gz
+  replacements:
+    amd64: 64-bit
+    darwin: mac
+    linux: linux
+  name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
+  files:
+    - README.md
